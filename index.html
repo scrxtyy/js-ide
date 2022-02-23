@@ -20,6 +20,7 @@
 
         #editor {
             height: 100%;
+            font-size: 18pt;
         }
         body > div:first-child {
             height: 70%;
@@ -84,7 +85,7 @@
         // initialize the editor environment using the ace library
         var editor = ace.edit("editor");
         editor.session.setMode("ace/mode/javascript"); // editor language
-        editor.setTheme("ace/theme/dawn"); // editor theme
+        editor.setTheme("ace/theme/monokai"); // editor theme
         editor.session.setTabSize(4);
         editor.session.setUseWrapMode(true);
 
