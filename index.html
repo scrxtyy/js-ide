@@ -57,11 +57,19 @@
 
 <body>
     <div>
-        <nav class="text-dark d-flex align-items-center pl-2 bg-warning"><span>Editor (Use Ctrl-Enter to execute)</span><div class="btn btn-warning" action>EXECUTE</div></nav>
+        <nav class="text-dark d-flex align-items-center pl-2 bg-warning">
+            <span>Editor (Use Ctrl-Enter to execute)</span>
+            <div class="btn btn-warning" action>EXECUTE</div>
+        </nav>
         <div id="editor"></div>
     </div>
     <div>
-        <nav class="text-light d-flex align-items-center pl-2 bg-dark"><span>Dev Console (Use Ctrl-I to clear console)</span><div class="btn btn-dark" action>CLEAR</div></nav>
+        <nav class="text-light d-flex align-items-center pl-2 bg-dark">
+            <span>Dev Console (Use Ctrl-I to clear console)</span>
+            <div class="btn btn-dark" action>CLEAR</div>
+            <div class="btn btn-dark" onclick="downloadAsTxt()" action>Download as txt file</div>
+            <div class="btn btn-dark" onclick="downloadAsJs()" action>Download as .js file</div>
+        </nav>
         <pre id="console"
             class="border border-dark bg-light text-dark p-2">Welcome to the JS Console<br />&raquo;  </pre>
     </div>
@@ -77,17 +85,23 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="./static/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="static/src-min/ext-language_tools.js"></script>
     <script>
 
         // initialize the content of the text editor to some Javascript
-        $("#editor").text(`function echo(m) {\n\treturn m;\n}\nconsole.log(echo("Hello World"));`);
+        $("#editor").text(`//This project is brought to you by Alibudbud, Tracie Mariz and\n//Del Rosario, Alessandra Joy D. from BSIT 3-2\n//Polytechnic University of the Philippines Santa Rosa Campus\n\n//The IDE only accepts console applications.\n\nconsole.log("Hello World!");`);
         
         // initialize the editor environment using the ace library
         var editor = ace.edit("editor");
         editor.session.setMode("ace/mode/javascript"); // editor language
-        editor.setTheme("ace/theme/monokai"); // editor theme
+        editor.setTheme("ace/theme/dawn"); // editor theme
         editor.session.setTabSize(4);
         editor.session.setUseWrapMode(true);
+        editor.setOptions({
+            enableBasicAutocompletion: true,
+            enableLiveAutocompletion: true,
+            enableSnippets: true
+        });
 
         // Override default console functions for our custom Dev Console
         (function () {
@@ -163,6 +177,37 @@
         // For phones and devices without a control key
         $("[action]").get(0).addEventListener('click', function (){ eval(editor.getValue()); });
         $("[action]").get(1).addEventListener('click', function (){ console.clear(); });
+        
+        function download(filename, text) {
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', filename);
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
+
+        // Start file download.
+        function downloadAsTxt(){
+            // Generate download of code.txt file with some content
+            var text = editor.getValue();
+            var filename = "code.txt";
+            
+            download(filename, text);
+        }
+
+        function downloadAsJs(){
+            // Generate download of code.txt file with some content
+            var text = editor.getValue();
+            var filename = "code.js";
+        
+            download(filename, text);
+        }
+        
     </script>
 </body>
 
