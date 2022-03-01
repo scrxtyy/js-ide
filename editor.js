@@ -1,6 +1,6 @@
 
         // initialize the content of the text editor to some Javascript
-        $("#editor").text(`//This project is brought to you by Alibudbud, Tracie Mariz and\n//Del Rosario, Alessandra Joy D. from BSIT 3-2\n//Polytechnic University of the Philippines Santa Rosa Campus\n\n//The IDE only accepts console applications.\n\nconsole.log("Hello World!");`);
+        $("#editor").text(`//This project is brought to you by Alibudbud, Tracie Mariz and\n//Del Rosario, Alessandra Joy D. from BSIT 3-2\n//Polytechnic University of the Philippines Santa Rosa Campus\n\n//The IDE only accepts console applications.\n//Ctrl-Enter to execute and Ctrl-I to clear console\n\nconsole.log("Hello World!");`);
         
         // initialize the editor environment using the ace library
         var editor = ace.edit("editor");

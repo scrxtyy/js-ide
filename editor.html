@@ -11,20 +11,21 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
     <link href="editor.css" rel="stylesheet">
-    <title>JS IDE</title>
+    <title>ENCODE - JS IDE</title>
 </head>
 
 <body>
     <div>
         <nav class="text-dark d-flex align-items-center pl-2 bg-warning" id="editor-header">
-            <span>Editor (Use Ctrl-Enter to execute)</span>
+            <div class="btn btn-warning"><a id="back" href="index.html">&#60; GO BACK</a></div>
+            <span id="header-text">ENCODE - Javascript IDE</span>
             <div class="btn btn-warning" action>EXECUTE</div>
         </nav>
         <div id="editor"></div>
     </div>
     <div>
         <nav class="text-light d-flex align-items-center pl-2 bg-dark">
-            <span>Dev Console (Use Ctrl-I to clear console)</span>
+            <span>Ouput</span>
             <div class="btn btn-dark" action>CLEAR</div>
             <div class="btn btn-dark" onclick="downloadAsTxt()" action>Download as txt file</div>
             <div class="btn btn-dark" onclick="downloadAsJs()" action>Download as .js file</div>
