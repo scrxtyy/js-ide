@@ -58,6 +58,13 @@ nav img{
 	color: #fff;
 }
 
+.paragraph-wrapper{
+	background-color: rgba(107, 30, 30, 0.719);
+	margin-left: 28%;
+	margin-right: 28%;
+	border-radius: 5px;
+}
+
 .visit-btn{
 	display: inline-block;
 	text-decoration: none;
@@ -107,6 +114,9 @@ nav .fa{
 	}
 	.nav-links ul{
 		padding: 10px;
+	}
+	.paragraph-wrapper{
+		margin:10px;
 	}
 }
 
