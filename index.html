@@ -6,6 +6,15 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
+        #first{
+            animation: slide-up-opacity ease 1s;
+        }
+		#second{
+			animation: slide-up-opacity ease 1.5s;
+		}
+		#third{
+			animation: slide-up-opacity ease 2s;
+		}
 		*{
 			margin: 0;
 			padding: 0;
@@ -21,6 +30,8 @@
 				<i class="fa fa-times" onclick="hideMenu()"></i>
 				  <ul>
 					<li><a href="index.html">Home</a></li>
+					<li><a href="index.html#about">About</a></li>
+					<li><a href="index.html#reviews">Reviews</a></li>
 					<li><a href="editor.html">IDE</a></li>
 					<li><a href="contact.html">Contact</a></li>
 				  </ul>
@@ -28,14 +39,21 @@
 			<i class="fa fa-bars" onclick="showMenu()"></i>
 		</nav>
 		<div class="text-box">
+			<div id="first">
 			<h1>JavaScript Programming IDE</h1>
+			</div>
+			<div id="second">
 			<div class="paragraph-wrapper">
 			<p>Making a website to create javascript programs without installing anything.<br>
 			You just need to have internet connection and you are good to go.</p>
 			</div>
+		</div>
+			<div id="third">
 			<a href="editor.html" class="visit-btn">Visit Us To Try</a>
+			</div>
 		</div>
 	</section>
+	<div id="about"></div>
 	<section class="language">
 		<h1>Language We Offer</h1>
 		<br><p>Encode is only limited for javascript programming language.</p><br>
@@ -73,6 +91,7 @@
 			</div>
 		</div>
 	</section>
+	<div id="reviews"></div>
 	<section class="reviews">
 		<h1>What Internet Says</h1><br>
 		<p>Internet's review is important because it will help the developers to improve the website.<br>
@@ -119,18 +138,10 @@
 		</div>
 		<br><p>Made by Tracie Mariz Alibudbud and<br>
 		Alessandra Joy Del Rosario with <i class="fa fa-heart-o"></i>.</p>
+		<button onclick="topFunction()" id="toTop" title="Go to top">↑</button>
 	</section>
 
-	<script>
-		var navLinks = document.getElementById("navLinks");
-	
-		function showMenu(){
-			navLinks.style.right = "0";
-		}
-		function hideMenu(){
-			navLinks.style.right = "-200px";
-		}
-	</script>
+	<script src="script.js"></script>
 
 </body>
 </html>
