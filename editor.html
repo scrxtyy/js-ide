@@ -18,6 +18,13 @@
     <div>
         <nav class="text-dark d-flex align-items-center pl-2 bg-warning" id="editor-header">
             <div class="btn btn-warning"><a id="back" href="index.html">&#60; GO BACK</a></div>
+            <div class="toggle-dark">
+            <span id="dark-text">DARK MODE</span>
+            <label class="switch"> 
+                <input type="checkbox" id="myCheckbox" onchange="toggleCheck()" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
             <span id="header-text">ENCODE - Javascript IDE</span>
             <div class="btn btn-warning" action>EXECUTE</div>
         </nav>
@@ -30,8 +37,8 @@
             <div class="btn btn-dark" onclick="downloadAsTxt()" action>Download as txt file</div>
             <div class="btn btn-dark" onclick="downloadAsJs()" action>Download as .js file</div>
         </nav>
-        <textarea id="console"
-            class="border border-dark bg-light text-dark p-2">Welcome to the JS Console&#10;&raquo;  </textarea>
+        <div id="console"
+            class="border border-dark bg-light text-dark p-2">Welcome to the JS Console&#10;&raquo;  </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

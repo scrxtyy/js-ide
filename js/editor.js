@@ -14,6 +14,19 @@
             enableSnippets: true
         });
 
+        function toggleCheck() {
+
+            if(document.getElementById("myCheckbox").checked === true){
+              editor.setTheme("ace/theme/dawn");
+            } else {
+                editor.setTheme("ace/theme/monokai");
+                    $('#console').css({
+                        'background-color': '#283947!important',
+                        'color': 'white!important'
+                });
+            }
+          }
+
         // Override default console functions for our custom Dev Console
         (function () {
             // store default console functionality before changing them
