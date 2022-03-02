@@ -20,10 +20,9 @@
               editor.setTheme("ace/theme/dawn");
             } else {
                 editor.setTheme("ace/theme/monokai");
-                    $('#console').css({
-                        'background-color': '#283947!important',
-                        'color': 'white!important'
-                });
+                // var con = document.getElementById('console');
+                // con.style.backgroundColor = '#283947!important';
+                // con.style.color = 'white!important';
             }
           }
 
